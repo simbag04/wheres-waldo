@@ -6,23 +6,25 @@ import bridge from './images/bridge.png'
 import castle from './images/castle.png'
 import rooster from './images/rooster.png'
 import Header from "./Header";
+import Miniitems from "./MiniItems.js";
+import './styles.css'
 
 
 function App() {
   const imageURL = mainImage;
   const [things, setThings] = useState([
     {
-      name: "castle",
+      name: "Castle",
       found: false,
       image: castle
     },
     {
-      name: "rooster",
+      name: "Rooster",
       found: false,
       image: rooster
     },
     {
-      name: "bridge",
+      name: "Bridge",
       found: false,
       image: bridge
     }
@@ -36,11 +38,19 @@ function App() {
     setShowImage(!showImage);
   }
 
+  const setFound = (name) => {
+    let objects = things.filter((thing) => thing.name === name);
+    objects[0].found = true;
+
+    setThings(things.map((thing) => thing.name === name ? objects[0] : thing));
+  }
+
   return (
     <div>
       <Header toggle={toggleDisplay} showButton={showImage}></Header>
       <StartPopup items={things} show={showStart} toggleShow={toggleDisplay}></StartPopup>
       <Image img={imageURL} show={showImage}></Image>
+      <Miniitems items={things}></Miniitems>
     </div>
   );
 }
