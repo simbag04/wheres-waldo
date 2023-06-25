@@ -1,4 +1,3 @@
-import { checkCoordinates } from "./firebase";
 const Miniitems = (props) => {
     const extractPxVal = (str) => {
         return Number(str.substring(0, str.length - 2));
@@ -13,17 +12,22 @@ const Miniitems = (props) => {
         let x = (left - bounds.left)/(bounds.right - bounds.left);
         let top = extractPxVal(div.style.top)
         let y = (top - bounds.top - Number(div.classList[0]))/(bounds.bottom - bounds.top);
-
-        console.log(await checkCoordinates(itemName, x, y));
+        
         div.style.display = "none"
+
+        props.clickHandler(itemName, x, y);
     }
 
     return (
         <div id="mini-items">
             {props.items.map((item) => {
-               return <div key={item.name}>
-                        <button id={item.name} onClick={clickHandler}>{item.name}</button>
-                    </div>
+                if (item.found === false) {
+                    return (
+                        <div key={item.name}>
+                            <button id={item.name} onClick={clickHandler}>{item.name}</button>
+                        </div>
+                   )
+                } else return null;
             })}
         </div>
     )

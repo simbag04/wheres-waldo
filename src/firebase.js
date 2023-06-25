@@ -7,7 +7,8 @@ import {
     collection,
     getFirestore,
     where,
-    getDocs
+    getDocs,
+    Timestamp
 } from "firebase/firestore"
 
 // Your web app's Firebase configuration
@@ -22,6 +23,8 @@ const firebaseConfig = {
 
 // Initialize Firebase
 initializeApp(firebaseConfig);
+
+const time = Timestamp;
 
 const checkCoordinates = async (item, x, y) => {
     const q = query(collection(getFirestore(), 'items'), where('name', '==', item));
@@ -39,4 +42,6 @@ const checkCoordinates = async (item, x, y) => {
     return finalRes;
 }
 
-export {checkCoordinates}
+
+
+export {checkCoordinates, time}

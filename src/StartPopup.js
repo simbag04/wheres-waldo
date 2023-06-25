@@ -1,6 +1,10 @@
 import Item from "./Item";
 
 const StartPopup = (props) => {
+    const startHandler = () => {
+        props.toggleShow();
+        if (!props.gameInProgress) props.start();
+    }
     return (
         <>
             { props.show ? (
@@ -11,7 +15,7 @@ const StartPopup = (props) => {
                             return <Item key={item.name} item={item}></Item>
                         })}
                     </div>
-                    <button onClick={props.toggleShow} id="start-button">Go!</button>
+                    <button onClick={startHandler} id="start-button">Go!</button>
                 </div>) : null }
         </>
     )
