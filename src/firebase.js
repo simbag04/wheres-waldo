@@ -8,7 +8,9 @@ import {
     getFirestore,
     where,
     getDocs,
-    Timestamp
+    Timestamp,
+    addDoc,
+    orderBy
 } from "firebase/firestore"
 
 // Your web app's Firebase configuration
@@ -42,6 +44,32 @@ const checkCoordinates = async (item, x, y) => {
     return finalRes;
 }
 
+const addToLeaderboard = async (name, time) => {
+    try {
+        await addDoc(collection(getFirestore(), 'leaderboard'), {
+            name: name,
+            time: time
+        })
+    } 
+    catch (error) {
+        console.log("Error")
+    }
+}
 
+const getLeaderboard = async () => {
+    const q = query(collection(getFirestore(), 'leaderboard'), orderBy('time', 'asc'))
+    const docs = await getDocs(q);
 
-export {checkCoordinates, time}
+    let array = [];
+
+    docs.forEach((doc) => {
+        array.push({
+            name: doc.data().name,
+            time: doc.data().time
+        })
+    })
+
+    return array;
+}
+
+export {checkCoordinates, time, addToLeaderboard, getLeaderboard}

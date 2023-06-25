@@ -19,11 +19,11 @@ const Timer = (props) => {
         let interval;
         if (!props.gameOver) {
             setTime(0);
-            console.log("Here")
             interval = setInterval(() => setTime(time => time + 1000), 1000);
         } 
         
         return () => {
+            setTime(0)
             clearInterval(interval);
         }
     }, [props.gameOver])

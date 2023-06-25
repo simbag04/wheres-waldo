@@ -1,5 +1,4 @@
-
-
+import circle from './images/circle-outline.svg'
 const Image = (props) => {
     const showCoordinates = (e) => {
         let div = document.querySelector("#mini-items");
@@ -8,12 +7,16 @@ const Image = (props) => {
         div.style.top = e.pageY + "px";
         div.className = ((e.pageY - e.clientY) + "");
     }
-    
+   
     return (
         <>
             {props.show ? 
-                <img id="image" src={props.img} alt="main" onClick={showCoordinates}></img> : null }
-            
+                <img id="image" 
+                    style={{cursor: `url("${circle}") 50 50, pointer`}}
+                    src={props.img} 
+                    alt="main" 
+                    onClick={showCoordinates}
+                    ></img> : null }
         </>
     )
 }
