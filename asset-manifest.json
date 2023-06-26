@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/wheres-waldo/static/css/main.d4ba3c63.css",
+    "main.js": "/wheres-waldo/static/js/main.7509aae6.js",
+    "static/media/world-pieces.jpg": "/wheres-waldo/static/media/world-pieces.acdd8df84487adf083e2.jpg",
+    "index.html": "/wheres-waldo/index.html",
+    "static/media/circle-outline.svg": "/wheres-waldo/static/media/circle-outline.b7111d7b275d641e5d64db228651b230.svg",
+    "main.d4ba3c63.css.map": "/wheres-waldo/static/css/main.d4ba3c63.css.map",
+    "main.7509aae6.js.map": "/wheres-waldo/static/js/main.7509aae6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d4ba3c63.css",
+    "static/js/main.7509aae6.js"
+  ]
+}
