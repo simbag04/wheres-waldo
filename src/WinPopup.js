@@ -7,7 +7,7 @@ const WinPopup = (props) => {
     }
     return (
         <div id="win-popup">
-            <div>You won! {props.time}</div>
+            <div className="title">You won! Time: {props.time.toFixed(2)} seconds</div>
             <label htmlFor="name-input">Enter your name here to be added to the leaderboard!</label>
             <input id="name-input" type="text" required></input>
             <button type="button" onClick={addToLeaderboard}>Submit</button>

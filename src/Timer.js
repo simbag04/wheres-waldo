@@ -28,7 +28,7 @@ const Timer = (props) => {
         }
     }, [props.gameOver])
 
-    return <div>{formatTime(time)}</div>
+    return <div class="title">{formatTime(time)}</div>
 }
 
 export default Timer

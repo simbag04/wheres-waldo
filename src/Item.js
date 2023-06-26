@@ -1,8 +1,8 @@
 const Item = (props) => {
     return (
-        <div>
-            <div className={props.item.found ? "green" : "red"}>{props.item.name}</div>
+        <div class="item">
             <img src={props.item.image} alt={props.item.name}/>
+            <div className={props.item.found ? "green" : "red"}>{props.item.name}</div>
         </div>
     )
 }

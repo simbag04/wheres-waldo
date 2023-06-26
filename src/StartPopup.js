@@ -6,7 +6,7 @@ const StartPopup = (props) => {
         if (!props.gameInProgress) props.start();
     }
     return (
-        <div className="start-popup-menu">
+        <div className="start-popup-menu body-item">
             <div className="title">Items to Find</div>
             <div className="items">
                 {props.items.map((item) => {

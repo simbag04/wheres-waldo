@@ -4,20 +4,20 @@ const Leaderboard = (props) => {
         props.reset();
     }
     return (
-        <div>
-            Leaderboard
+        <div className="leaderboard body-item">
+            <div className="title">Leaderboard</div>
             <table>
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Time</th>
+                        <th>Time (seconds)</th>
                     </tr>
                 </thead>
                 <tbody>
                     {props.items.map((item) => (
                         <tr key={item.time}>
                             <td>{item.name}</td>
-                            <td>{item.time}</td>
+                            <td>{item.time.toFixed(2)}</td>
                         </tr>
                     ))}
                 </tbody>
