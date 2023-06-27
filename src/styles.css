@@ -107,6 +107,7 @@ button {
     border-radius: 5px;
     padding: var(--padding);
     background-color: #C1DBB3;
+    color: black;
 }
 
 button:hover {
